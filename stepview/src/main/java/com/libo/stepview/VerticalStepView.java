@@ -60,8 +60,8 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
      * @return
      */
     public VerticalStepView setStepViewTexts(List<Item> texts) {
-        mTexts = texts;
         mStepsViewIndicator.setStepNum(mTexts.size());
+        mTexts = texts;
         return this;
     }
 
