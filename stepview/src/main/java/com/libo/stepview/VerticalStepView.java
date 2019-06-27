@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -22,7 +23,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
     private VerticalStepViewIndicator mStepsViewIndicator;
     private List<Item> mTexts;
     private int mComplectingPosition;
-    private int mUnComplectedTextColor = ContextCompat.getColor(getContext(), R.color.uncompleted_text_color);//定义默认未完成文字的颜色;
+    private int mUnComplectedTextColor =  R.color.uncompleted_text_color;//定义默认未完成文字的颜色;
     private int mComplectedTextColor = ContextCompat.getColor(getContext(), android.R.color.white);//定义默认完成文字的颜色;
 
 
@@ -175,6 +176,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
     @Override
     public void ondrawIndicator() {
         List<Float> complectedXPosition = mStepsViewIndicator.getCircleCenterPointPositionList();
+        Log.d("step",complectedXPosition.size()+"");
         if (mTexts != null) {
             for (int i = 0; i < mTexts.size(); i++) {
                 View view = View.inflate(getContext(), R.layout.item_vp_tv, null);
